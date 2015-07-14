@@ -1,0 +1,12 @@
+[master]
+master ansible_ssh_host=192.168.0.36  ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+[slaves]
+node-1 ansible_ssh_host=192.168.0.37  ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+node-2 ansible_ssh_host=192.168.0.38  ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+[servers]
+master ansible_ssh_host=192.168.0.36  ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+node-1 ansible_ssh_host=192.168.0.37  ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+node-2 ansible_ssh_host=192.168.0.38  ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+

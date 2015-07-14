@@ -1,0 +1,15 @@
+---
+- name: make data directory
+  shell: mkdir -p {{ mpi_dir }}
+
+- name: copy shared folder
+  copy: src=data.tar.bz2 dest={{ mpi_dir }}
+
+- name: un-archive datafiles
+  shell: tar -xvjf {{ mpi_dir }}/data.tar.bz2
+
+- name: configure export file
+  template: src=exports.j2 dest=/etc/exports
+
+- name: restart nfs service
+  service: name=nfs-kernel-server state=restarted 

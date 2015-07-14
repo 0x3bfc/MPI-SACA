@@ -1,0 +1,27 @@
+# Install and Configure Common Packages
+- hosts: all
+  sudo: yes
+  roles:
+   - role: common
+
+# NFS
+- hosts: all
+  sudo: yes
+  roles:
+   - role: nfs
+
+- hosts: master
+  sudo: yes
+  tasks:
+   - include: roles/nfs/tasks/exports.yml
+
+- hosts: slaves
+  sudo: yes
+  tasks:
+   - include: roles/nfs/tasks/mount.yml
+
+# MPI
+- hosts: servers
+  sudo: yes
+  roles: 
+   - role: mpi

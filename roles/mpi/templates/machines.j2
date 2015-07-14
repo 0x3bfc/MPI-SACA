@@ -1,0 +1,3 @@
+{% for host in groups['servers'] %}
+{{ host }}:{{ hostvars[host]["ansible_processor_count"] }}
+{% endfor %}
