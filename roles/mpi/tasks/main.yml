@@ -1,7 +1,7 @@
 ---
 
 - name: Install MPI Packages
-  shell: apt-get -y install mpich2
+  shell: apt-get -y install mpich2 openmpi-bin openmpi-common libopenmpi1.3 libopenmpi-dev
 
 - name: Create Machines File
   template: src=machines.j2 dest=/home/{{ ansible_ssh_user }}/machinefile
