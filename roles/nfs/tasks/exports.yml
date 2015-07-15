@@ -10,6 +10,10 @@
 
 - name: configure export file
   template: src=exports.j2 dest=/etc/exports
+  when: not azure
+
+- name: configure exports file on azure
+  template: src=exports-azure.j2 dest=/etc/exports
 
 - name: restart nfs service
   service: name=nfs-kernel-server state=restarted 

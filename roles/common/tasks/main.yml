@@ -4,6 +4,11 @@
 
 - name: Create the hosts file for all machines
   template: src=hosts.j2 dest=/etc/hosts
+  when: not azure
+
+- name: Create the hosts file for all machines on Azure
+  template: src=hosts-azure.j2 dest=/etc/hosts
+  when: azure
 
 - name: Set default locale to en_US.UTF-8
   debconf: name=locales question='locales/default_environment_locale' value=en_US.UTF-8 vtype='select'
@@ -19,9 +24,6 @@
   notify:
   - restart rsyslog
   - restart cron
-
-- name: Create the hosts file for all machines
-  template: src=hosts.j2 dest=/etc/hosts
 
 - name: copy private key
   copy: src=id_rsa dest=/home/{{ ansible_ssh_user }}/.ssh/id_rsa

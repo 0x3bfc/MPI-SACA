@@ -15,9 +15,9 @@ Vagrant.configure('2') do |config|
         azure.vm_user = 'ubuntu' # change to username on your local host
 	azure.ssh_private_key_file = '/home/ubuntu/.ssh/id_rsa'	# change the path of id_rsa to yours
 	azure.ssh_certificate_file = '/home/ubuntu/.ssh/ssh-cert.pem' # change the path of ssh-cer.pem to yours
-        azure.vm_name = 'mpi-azure'
-        azure.cloud_service_name = 'mpi-azure1' # same as vm_name. leave blank to auto-generate
-        azure.deployment_name = 'mpi-azure1' # defaults to cloud_service_name
+        azure.vm_name = 'mongo-azure'
+        azure.cloud_service_name = 'mongo-azure1' # same as vm_name. leave blank to auto-generate
+        azure.deployment_name = 'mongo-azure1' # defaults to cloud_service_name
         azure.vm_location = 'East US' # e.g., West US
 	azure.ssh_port = '22'
   end

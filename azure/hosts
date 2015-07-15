@@ -1,0 +1,11 @@
+[servers]
+master  ansible_ssh_port=2200   ansible_ssh_host=mongo-azure1.cloudapp.net  ansible_ssh_user=ubuntu
+node-1 ansible_ssh_port=2201   ansible_ssh_host=mongo-azure1.cloudapp.net  ansible_ssh_user=ubuntu
+node-2 ansible_ssh_port=2202   ansible_ssh_host=mongo-azure1.cloudapp.net  ansible_ssh_user=ubuntu
+
+[master]
+master  ansible_ssh_port=2200   ansible_ssh_host=mongo-azure1.cloudapp.net  ansible_ssh_user=ubuntu
+
+[slaves]
+node-1 ansible_ssh_port=2201   ansible_ssh_host=mongo-azure1.cloudapp.net  ansible_ssh_user=ubuntu
+node-2 ansible_ssh_port=2202   ansible_ssh_host=mongo-azure1.cloudapp.net  ansible_ssh_user=ubuntu
