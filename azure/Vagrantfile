@@ -9,7 +9,7 @@ Vagrant.configure('2') do |config|
 	config.ssh.pty= true
         azure.mgmt_certificate = 'cert/cert.pem'
         azure.mgmt_endpoint = 'https://management.core.windows.net'
-        azure.subscription_id = 'b80d923e-c34e-4c27-bf29-565625b4905e' # add here your subscription id
+        azure.subscription_id = '<YOUR SUBSCRIPTION ID>' # add here your subscription id
         azure.storage_acct_name = 'vagrantazure1'
         azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-precise-12_04_5-LTS-amd64-server-20150709-en-us-30GB'
         azure.vm_user = 'ubuntu' # change to username on your local host
